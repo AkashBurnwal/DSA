@@ -1,0 +1,30 @@
+class Solution{
+public:
+    int missingNumber(vector<int>& nums){
+        int answer = 0;
+        for(int i = 0; i <= nums.size(); i++)
+        {
+            if(i < nums.size())
+            {
+                answer = answer ^ nums[i] ^ i;
+            }else{
+                answer = answer ^ i;
+            }
+        }
+        return answer;
+    }
+};
+
+// class Solution {
+// public:
+//     int missingNumber(vector<int>& nums) {
+//         int n = nums.size();
+//         int sum=n*(n+1)/2 ;
+//         int s2=0;
+//         for(int i=0;i<n;i++)
+//         {
+//             s2+= nums[i];
+//         }
+//         return (sum-s2);
+//     }
+// };
